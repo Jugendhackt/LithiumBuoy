@@ -19,6 +19,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { BackgroundProcesses } from '../classes/BackgroundProcesses'
 
 import { BatteryStatus } from '@ionic-native/battery-status';
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     SettingsPage,
     HomePage,
     TabsPage,
-    TutorialPage
+    TutorialPage,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

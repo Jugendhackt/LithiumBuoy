@@ -5,13 +5,40 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
   <h2>Willkommen bei LithiumBuoye!</h2>
   <p>
     Hier kannst du deine Steckdose an- und ausschalten.
   </p>
-   <ion-item>
+    </ion-item>
+  <ion-item>
     <ion-label>Steckdose</ion-label>
     <ion-toggle [(ngModel)]="socket" (ionChange)="socketToggleEvent()" [disabled]="isDisabled"></ion-toggle>
+    <button (click)="enableBackground()">Background</button>
   </ion-item>
-  <button (click)="enableBackground()">Background</button>
+  <ion-item>
+    <ion-label>Aktuelle Akkuladung</ion-label>
+    <br>
+  </ion-item>
+      <progress-bar [progress]="batterylevel"></progress-bar>
+
+  <ion-item margin-top>
+   
+Laden bis ...
+
+<ion-item>
+  <ion-range [(ngModel)]="loadTo">
+    <ion-icon range-left small name="ion-flash"></ion-icon>
+    <p range-right>{{loadTo}} %</p>
+  </ion-range>
+</ion-item>
+<button ion-button *ngIf="loadToActive"  color="secondary" (click)="stopLoadTo()">Ladevorgang läuft... (Abbrechen)</button>
+
+  <button ion-button *ngIf="!loadToActive" (click)="startLoadTo()">
+  Ladevorgang starten
+</button>
+   
+    </ion-item>
+
+
 </ion-content>
