@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Wecker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-fab right bottom>
+    <button (click)="newAlarm()" ion-fab><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-card *ngFor="let alarm of alarms; let i = index" (press)="delete(i)">
+    <ion-card-header>
+      {{ alarm.time }}
+    </ion-card-header>
+    <ion-toggle [(ngModel)]="alarm.enabled" (ionChange)="changedAlarm()"></ion-toggle>
+  </ion-card>
+</ion-content>

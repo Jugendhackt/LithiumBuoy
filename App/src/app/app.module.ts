@@ -6,31 +6,31 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
 
 
-import { AboutPage } from '../pages/about/about';
+import { AlarmPage } from '../pages/alarm/alarm';
 import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-
+import { NewAlarmPage } from '../pages/newAlarm/newAlarm';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { BackgroundProcesses } from '../classes/BackgroundProcesses'
 
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
-
+import { AlarmService } from '../classes/alarmService'
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    AlarmPage,
     SettingsPage,
     HomePage,
     TabsPage,
     TutorialPage,
-    ProgressBarComponent
+    ProgressBarComponent,
+    NewAlarmPage
   ],
   imports: [
     BrowserModule,
@@ -42,16 +42,18 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
   entryComponents: [
     MyApp,
     TutorialPage,
-    AboutPage,
+    AlarmPage,
     SettingsPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    NewAlarmPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BatteryStatus,
-    BackgroundMode
+    BackgroundMode,
+    AlarmService
   ]
 })
 export class AppModule {}

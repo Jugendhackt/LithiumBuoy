@@ -1,0 +1,19 @@
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Neue Zeit erstellen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #popoverContent padding class="popover-page">
+  <ion-item>
+    <ion-label>Zeit: </ion-label>
+    <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="event.time"></ion-datetime>
+  </ion-item>
+  <button ion-button (click)="save()">Erstellen</button>
+</ion-content>
+
+<style>
+
+</style>
