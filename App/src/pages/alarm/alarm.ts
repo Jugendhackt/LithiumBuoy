@@ -29,7 +29,7 @@ export class AlarmPage {
     });
   }
 
-  //The create/plus button was pressed
+  //The create/plus button was pressed => Popover is opened
   newAlarm(): void {
     //this.alarms=this.alarmService.alarms;
     console.log("New Alarm", this.alarms);
@@ -48,6 +48,7 @@ export class AlarmPage {
     this.alarmService.setAlarms(this.alarms);
   }
 
+  //A card in the list was pressed => Promp is opened and asks if you really wanna delete that alert
   delete(index): void {
     console.log("Index:",index);
     let confirm = this.alertCtrl.create({

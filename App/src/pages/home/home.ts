@@ -43,6 +43,8 @@ export class HomePage {
     });
 
   }
+
+  //Executed if the switch to control the socket is toggled
   public socketToggleEvent() {
     console.log("Toggled: " + this.socket);
     if (this.socket) {
@@ -57,6 +59,7 @@ export class HomePage {
   }
   //BACKGROUND
 
+  //Function to active the Background-Mode
   private enableBackground(): void {
     console.log("Background");
     this.background.enable();

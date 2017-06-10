@@ -16,6 +16,7 @@ export class NewAlarmPage {
     console.log("NewAlarmPage constructed");
   }
 
+  //Save a new alarm
   save(): void{
     console.log("Saved", this.event);
     this.AlarmService.addAlarm(this.event);
