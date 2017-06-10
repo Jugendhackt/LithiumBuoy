@@ -17,6 +17,14 @@ export class AlarmService {
     console.log("Pushed:",this.alarms);
   }
 
+  removeAlarm(index) {
+    console.log("Removing:", index);
+    if (index > -1) {
+      this.alarms.splice(index, 1);
+      return this.Storage.set("alarms", this.alarms);
+    }
+  }
+
   setAlarms(alarms): void{
     this.alarms=alarms;
     this.Storage.set("alarms", alarms);
