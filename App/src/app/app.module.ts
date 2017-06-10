@@ -21,6 +21,7 @@ import { BackgroundProcesses } from '../classes/BackgroundProcesses'
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
+
 @NgModule({
   declarations: [
     MyApp,

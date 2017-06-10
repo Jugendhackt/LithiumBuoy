@@ -1,11 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Zeiten
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-fab right bottom>
+    <button (click)="newTime()" ion-fab><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-card *ngFor="let time of times">
+    <ion-card-header>
+      {{ time.time }}
+    </ion-card-header>
+    <ion-toggle [(ngModel)]="time.enabled" (ionChange)="changedAlarm()"></ion-toggle>
+  </ion-card>
 </ion-content>
