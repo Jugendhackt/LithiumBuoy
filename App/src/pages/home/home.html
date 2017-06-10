@@ -14,4 +14,8 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+   <ion-item>
+    <ion-label>Steckdose</ion-label>
+    <ion-toggle [(ngModel)]="socket" (ionChange)="socketToggleEvent()"></ion-toggle>
+  </ion-item>
 </ion-content>
