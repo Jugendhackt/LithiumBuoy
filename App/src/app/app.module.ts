@@ -11,12 +11,14 @@ import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-
+import { NewTimePage } from '../pages/newTime/newTime';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { BackgroundProcesses } from '../classes/BackgroundProcesses'
+
+import { BackgroundProcesses } from '../classes/BackgroundProcesses';
+import { AlarmService } from '../classes/alarmService';
 
 import { BatteryStatus } from '@ionic-native/battery-status';
 
@@ -27,7 +29,8 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     SettingsPage,
     HomePage,
     TabsPage,
-    TutorialPage
+    TutorialPage,
+    NewTimePage
   ],
   imports: [
     BrowserModule,
@@ -42,13 +45,15 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     AboutPage,
     SettingsPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    NewTimePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BatteryStatus,
-    BackgroundMode
+    BackgroundMode,
+    AlarmService
   ]
 })
 export class AppModule {}
