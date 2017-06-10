@@ -1,5 +1,6 @@
 interface EndpointAdapter {
     //TODO: Add Authentication
-    on(): void;
-    off(): void;  
+    on();
+    off();  
+    getState();
 }

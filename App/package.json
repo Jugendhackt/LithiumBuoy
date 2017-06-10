@@ -27,6 +27,7 @@
         "@ionic-native/status-bar": "3.10.2",
         "@ionic/storage": "2.0.1",
         "cordova-android": "^6.2.3",
+        "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.4.0",
         "cordova-plugin-background-mode": "^0.7.2",
         "cordova-plugin-battery-status": "^1.2.4",
@@ -64,6 +65,7 @@
         },
         "platforms": [
             "android",
+            "browser",
             "ios"
         ]
     }

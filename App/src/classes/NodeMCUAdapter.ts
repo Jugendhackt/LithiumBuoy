@@ -12,7 +12,7 @@ export class NodeMCUAdapter implements EndpointAdapter {
         storage.get('ip').then((val) => {
             this.url = "http://" + val + "/";
             console.log(this.url)
-                });
+        });
     }
 
     on(): Observable<any> {
@@ -23,5 +23,10 @@ export class NodeMCUAdapter implements EndpointAdapter {
     off(): Observable<any> {
         return this.http
             .get(this.url + "off");
+    }
+
+    getState(): Observable<any> {
+        return this.http
+            .get(this.url + "state")
     }
 }
