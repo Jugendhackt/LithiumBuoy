@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Einstellungen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-label>IP Adresse</ion-label>
+    <ion-input type="text" ng-model="ip"> </ion-input>
+  </ion-item>
+</ion-list>
+
+<div padding>
+<button ion-button (click)="saveSettings()">Speichern</button>
+</div>
+</ion-content>
