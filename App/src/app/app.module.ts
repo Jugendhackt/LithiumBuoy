@@ -16,6 +16,8 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { BatteryStatus } from '@ionic-native/battery-status';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,6 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    BatteryStatus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
