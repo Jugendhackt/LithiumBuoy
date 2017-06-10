@@ -24,9 +24,9 @@ void ChargingOff()
   bOn = false;
 }
 
-void ChangeChargingState(bool bOn)
+void ChangeChargingState(bool bNewOn)
 {
-  if (bOn)
+  if (bNewOn)
   {
     ChargingOn();
   }
@@ -47,16 +47,30 @@ void handleRoot()
 
 void handleOnRequest() 
 {
-  server.send(200, "text/plain", "Turn on Request received!");
+  server.send(200, "text/plain", "1");
   Serial.println("Turn on Request received!");
    ChargingOn();
 }
 
 void handleOffRequest() 
 {
-  server.send(200, "text/plain", "Turn off Request received!");
+  server.send(200, "text/plain", "0");
   Serial.println("Turn off Request received!");
   ChargingOff();
+}
+
+void handleStateRequest() 
+{
+  String Response = "";
+  if (bOn)
+  {
+    Response = "1";
+  }
+  else
+  {  
+    Response = "0";
+  }
+  server.send(200, "text/plain", Response);
 }
 
 void handleNotFound()
@@ -103,6 +117,7 @@ void setup(void)
   server.on("/", handleRoot);
   server.on("/on", handleOnRequest);
   server.on("/off", handleOffRequest);
+  server.on("/state", handleStateRequest);
   server.onNotFound (handleNotFound );
   
   server.begin();
