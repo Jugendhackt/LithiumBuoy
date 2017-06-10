@@ -15,6 +15,8 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { BackgroundProcesses } from '../classes/BackgroundProcesses'
 
 import { BatteryStatus } from '@ionic-native/battery-status';
 
@@ -46,7 +48,7 @@ import { BatteryStatus } from '@ionic-native/battery-status';
     StatusBar,
     SplashScreen,
     BatteryStatus,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    BackgroundMode
   ]
 })
 export class AppModule {}

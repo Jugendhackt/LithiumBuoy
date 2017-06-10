@@ -20,12 +20,15 @@
         "@angular/http": "4.1.2",
         "@angular/platform-browser": "4.1.2",
         "@angular/platform-browser-dynamic": "4.1.2",
+        "@ionic-native/background-mode": "^3.12.1",
         "@ionic-native/battery-status": "^3.12.1",
         "@ionic-native/core": "3.10.2",
         "@ionic-native/splash-screen": "3.10.2",
         "@ionic-native/status-bar": "3.10.2",
         "@ionic/storage": "2.0.1",
+        "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",
+        "cordova-plugin-background-mode": "^0.7.2",
         "cordova-plugin-battery-status": "^1.2.4",
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-device": "^1.1.4",
@@ -56,9 +59,11 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-battery-status": {}
+            "cordova-plugin-battery-status": {},
+            "cordova-plugin-background-mode": {}
         },
         "platforms": [
+            "android",
             "ios"
         ]
     }
