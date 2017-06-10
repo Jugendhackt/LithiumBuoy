@@ -14,6 +14,8 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { BackgroundProcesses } from '../classes/BackgroundProcesses'
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BackgroundMode
   ]
 })
 export class AppModule {}
