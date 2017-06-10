@@ -3,6 +3,7 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 #include <RCSwitch.h>
+#include <ArduinoJson.h>
 
 const char* ssid = "betahaus2.0";
 const char* password = "betahaus10?";
@@ -14,7 +15,6 @@ ESP8266WebServer server(80);
 #define LED 16
 
 bool bOn = false;
-
 
 void ChargingOn()
 {
@@ -41,6 +41,26 @@ void ChangeChargingState(bool bNewOn)
   }
 }
 
+void ToggleChargeState()
+{
+    if (bOn)
+  {
+    ChargingOff();
+  }
+  else
+  {
+    ChargingOn();
+  }
+}
+
+void TrollChargeState()
+{
+  for (int i = 0; i <= 30; i++)
+  {
+    ToggleChargeState();
+    delay(2000);
+  }
+}
 
 void handleRoot() 
 {
@@ -50,32 +70,43 @@ void handleRoot()
   //digitalWrite(led, 0);
 }
 
+void handleStateRequest() 
+{
+  StaticJsonBuffer<200> jsonBuffer;
+
+  JsonObject& root = jsonBuffer.createObject();
+  root["status"] = bOn;
+  String Buffer;
+  root.printTo(Buffer);
+  server.send(200, "application/json", Buffer);
+}
+
 void handleOnRequest() 
 {
-  server.send(200, "text/plain", "1");
   Serial.println("Turn on Request received!");
-   ChargingOn();
+  ChargingOn();
+  handleStateRequest();
 }
 
 void handleOffRequest() 
 {
-  server.send(200, "text/plain", "0");
   Serial.println("Turn off Request received!");
   ChargingOff();
+  handleStateRequest();
 }
 
-void handleStateRequest() 
+void handleToggleRequest() 
 {
-  String Response = "";
-  if (bOn)
-  {
-    Response = "1";
-  }
-  else
-  {  
-    Response = "0";
-  }
-  server.send(200, "text/plain", Response);
+  Serial.println("Toggle Request received!");
+  ToggleChargeState();
+  handleStateRequest();
+}
+
+void handleTrollRequest() 
+{
+  Serial.println("Troll Request received!");
+  TrollChargeState();
+  handleStateRequest();
 }
 
 void handleNotFound()
@@ -123,13 +154,15 @@ void setup(void)
   server.on("/on", handleOnRequest);
   server.on("/off", handleOffRequest);
   server.on("/state", handleStateRequest);
+  server.on("/toggle", handleToggleRequest);
+  server.on("/troll", handleTrollRequest);
   server.onNotFound (handleNotFound );
   
   server.begin(); 
   Serial.println("HTTP server started");
 
   
-  Switch.enableTransmit(D1);
+  Switch.enableTransmit(D4);
   Switch.setProtocol(1);
   Switch.setPulseLength(433);
   Switch.setRepeatTransmit(4);
