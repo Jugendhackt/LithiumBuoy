@@ -16,10 +16,12 @@ bool bOn = false;
 void ChargingOn()
 {
   digitalWrite(LED, 0);
+  bOn = true;
 }
 void ChargingOff()
 {
   digitalWrite(LED, 1);
+  bOn = false;
 }
 
 void ChangeChargingState(bool bOn)
@@ -106,6 +108,8 @@ void setup(void)
   server.begin();
   
   Serial.println("HTTP server started");
+
+  ChargingOff();
 }
 
 void loop(void){
