@@ -19,13 +19,7 @@ this.storage.get('ip').then((val) => {
 
 saveSettings(){
   this.storage.set('ip', this.ip);
-  console.log("Saving settings");
-
-
-  this.storage.get('ip').then((val) => {
-  console.log(this.ip);
-    this.ip = val;
-  });
+  console.log("Saved IP: " + this.ip);
 }
 
 }
