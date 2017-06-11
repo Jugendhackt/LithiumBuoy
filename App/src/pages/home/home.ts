@@ -61,11 +61,4 @@ export class HomePage {
     this.loadToActive = enabled
   }
 
-<<<<<<< HEAD
-=======
-  //Notifications
-  public sendTestNotification() {
-
-  }
->>>>>>> 24aec66c73c2ea0ae8dcf33d06d11e487469dd68
 }
