@@ -20,6 +20,8 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { AlarmService } from '../classes/alarmService'
+import { StateService } from '../classes/StateService'
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { AlarmService } from '../classes/alarmService'
     SplashScreen,
     BatteryStatus,
     BackgroundMode,
-    AlarmService
+    AlarmService,
+    StateService
   ]
 })
 export class AppModule {}

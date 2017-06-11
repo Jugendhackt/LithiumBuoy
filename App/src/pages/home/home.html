@@ -12,11 +12,6 @@
   </p>
     </ion-item>
   <ion-item>
-    <ion-label>Steckdose</ion-label>
-    <ion-toggle [(ngModel)]="socket" (ionChange)="socketToggleEvent()" [disabled]="isDisabled"></ion-toggle>
-    <button (click)="enableBackground()">Background</button>
-  </ion-item>
-  <ion-item>
     <ion-label>Aktuelle Akkuladung</ion-label>
     <br>
   </ion-item>
@@ -32,9 +27,9 @@ Laden bis ...
     <p range-right>{{loadTo}} %</p>
   </ion-range>
 </ion-item>
-<button ion-button *ngIf="loadToActive"  color="secondary" (click)="stopLoadTo()">Ladevorgang läuft... (Abbrechen)</button>
+<button ion-button *ngIf="loadToActive"  color="secondary" (click)="toggleLoadTo()">Ladevorgang läuft... (Abbrechen)</button>
 
-  <button ion-button *ngIf="!loadToActive" (click)="startLoadTo()">
+  <button ion-button *ngIf="!loadToActive" (click)="toggleLoadTo()">
   Ladevorgang starten
 </button>
    

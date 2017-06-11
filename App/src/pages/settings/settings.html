@@ -12,9 +12,14 @@
     <ion-label>IP Adresse</ion-label>
     <ion-input type="text" [(ngModel)]="ip"> </ion-input>
   </ion-item>
+  <div padding>
+    <button ion-button (click)="saveSettings()">Speichern</button>
+    </div>
+  <ion-item padding>
+    <ion-label>Steckdose</ion-label>
+    <ion-toggle [(ngModel)]="stateService.isPowered" (ionChange)="stateService.toggleSocket()" [disabled]="isDisabled"></ion-toggle>
+    <button (click)="enableBackground()">Background</button>
+  </ion-item>
 </ion-list>
 
-<div padding>
-<button ion-button (click)="saveSettings()">Speichern</button>
-</div>
 </ion-content>
