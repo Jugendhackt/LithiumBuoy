@@ -29,11 +29,21 @@ export class AlarmService {
 
   //Remove an alarm from the list using its index
   removeAlarm(index) {
-    console.log("Removing:", index);
-    if (index > -1) {
-      this.alarms.splice(index, 1);
-      return this.Storage.set("alarms", this.alarms);
-    }
+    //return this.Storage.get("alarms");
+    this.refreshAlarms();
+    console.log(this.Storage.get("alarms"));
+    return this.Storage.get("alarms").then((alarms) => {
+      this.alarms=alarms;
+      if(!alarms){
+        this.alarms=[];
+      }
+      console.log("Removing:", index, this.alarms);
+      if (index > -1) {
+        this.alarms.splice(index, 1);
+        console.log("Removed:",this.alarms);
+        this.Storage.set("alarms", this.alarms);
+      }
+    });
   }
 
   //Set the alarm to the given array (Schema at "addAlarm()")

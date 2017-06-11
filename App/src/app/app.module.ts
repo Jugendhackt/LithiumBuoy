@@ -5,7 +5,6 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
 
-
 import { AlarmPage } from '../pages/alarm/alarm';
 import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
@@ -21,7 +20,7 @@ import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { AlarmService } from '../classes/alarmService'
 import { StateService } from '../classes/StateService'
-
+import { AlarmPipe } from '../classes/alarmPipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import { StateService } from '../classes/StateService'
     TabsPage,
     TutorialPage,
     ProgressBarComponent,
-    NewAlarmPage
+    NewAlarmPage,
+    AlarmPipe
   ],
   imports: [
     BrowserModule,

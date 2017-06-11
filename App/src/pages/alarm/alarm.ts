@@ -4,6 +4,7 @@ import { NewAlarmPage } from '../newAlarm/newAlarm';
 import { PopoverController } from 'ionic-angular';
 import { AlarmService } from '../../classes/alarmService';
 import { AlertController } from 'ionic-angular';
+import { AlarmPipe } from '../../classes/alarmPipe';
 
 @Component({
   selector: 'page-alarm',
@@ -37,6 +38,7 @@ export class AlarmPage {
     popover.present();
     popover.onDidDismiss(() => {
       console.log("Dismissed")
+      //Tested
       this.alarmService.getAlarms().then( (alarms) => {
         this.alarms=alarms;
       });
