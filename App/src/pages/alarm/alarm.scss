@@ -9,4 +9,9 @@ ion-card {
 
 ion-card ion-toggle {
   padding-top: 18px !important;
+  margin-right: 10px;
+}
+
+ion-card ion-toggle.toggle-ios {
+  padding-top: 12px !important;
 }
