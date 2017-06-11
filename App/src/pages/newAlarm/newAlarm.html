@@ -11,5 +11,17 @@
     <ion-label>Zeit: </ion-label>
     <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="event.time"></ion-datetime>
   </ion-item>
+  <ion-item>
+    <ion-label>Wiederholen</ion-label>
+    <ion-select [(ngModel)]="event.repeat" multiple="true" cancelText="Abbrechen" okText="Ok!">
+      <ion-option value="Montag">Montag</ion-option>
+      <ion-option value="Dienstag">Dienstag</ion-option>
+      <ion-option value="Mittwoch">Mittwoch</ion-option>
+      <ion-option value="Donnerstag">Donnerstag</ion-option>
+      <ion-option value="Freitag">Freitag</ion-option>
+      <ion-option value="Samstag">Samstag</ion-option>
+      <ion-option value="Sonntag">Sonntag</ion-option>
+    </ion-select>
+  </ion-item>
   <button ion-button (click)="save()">Erstellen</button>
 </ion-content>

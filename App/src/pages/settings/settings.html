@@ -6,15 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-<ion-list>
-  <ion-item>
-    <ion-label>IP Adresse</ion-label>
-    <ion-input type="text" [(ngModel)]="ip"> </ion-input>
-  </ion-item>
-</ion-list>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>IP Adresse</ion-label>
+      <ion-input type="text" [(ngModel)]="ip"> </ion-input>
+    </ion-item>
+  </ion-list>
 
-<div padding>
-<button ion-button (click)="saveSettings()">Speichern</button>
-</div>
+  <div padding>
+    <button ion-button (click)="saveSettings()">Speichern</button>
+  </div>
 </ion-content>

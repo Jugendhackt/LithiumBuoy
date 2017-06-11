@@ -5,7 +5,6 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpModule } from '@angular/http';
 
-
 import { AlarmPage } from '../pages/alarm/alarm';
 import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';

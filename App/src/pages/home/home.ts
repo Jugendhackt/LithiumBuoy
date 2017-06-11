@@ -8,6 +8,7 @@ import { BatteryStatusResponse } from '@ionic-native/battery-status';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @Component({
   selector: 'page-home',
@@ -78,5 +79,10 @@ export class HomePage {
     this.client.off().subscribe(data => console.log(data))
     this.loadToActive = false;
     this.socket = false;
+  }
+
+  //Notifications
+  public sendTestNotification() {
+
   }
 }

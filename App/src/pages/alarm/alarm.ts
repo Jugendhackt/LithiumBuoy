@@ -37,6 +37,7 @@ export class AlarmPage {
     popover.present();
     popover.onDidDismiss(() => {
       console.log("Dismissed")
+      //Tested
       this.alarmService.getAlarms().then( (alarms) => {
         this.alarms=alarms;
       });
