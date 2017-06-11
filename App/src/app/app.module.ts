@@ -19,6 +19,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { AlarmService } from '../classes/alarmService'
+import { AlarmPipe } from '../classes/alarmPipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AlarmService } from '../classes/alarmService'
     TabsPage,
     TutorialPage,
     ProgressBarComponent,
-    NewAlarmPage
+    NewAlarmPage,
+    AlarmPipe
   ],
   imports: [
     BrowserModule,

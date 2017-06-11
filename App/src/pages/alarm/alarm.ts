@@ -4,6 +4,7 @@ import { NewAlarmPage } from '../newAlarm/newAlarm';
 import { PopoverController } from 'ionic-angular';
 import { AlarmService } from '../../classes/alarmService';
 import { AlertController } from 'ionic-angular';
+import { AlarmPipe } from '../../classes/alarmPipe';
 
 @Component({
   selector: 'page-alarm',
