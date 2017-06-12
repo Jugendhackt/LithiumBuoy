@@ -6,8 +6,7 @@ $ sudo npm install -g ionic cordova
 $ git clone https://github.com/Jugendhackt/LithiumBuoy
 $ cd App
 $ ionic serve
-? Looks like a fresh checkout! No ./node_modules directory found. Would you lik
-e to install project dependencies? (Y/n)
+? Looks like a fresh checkout! No ./node_modules directory found. Would you like to install project dependencies? (Y/n)
 $ Y
 $ ionic serve
 

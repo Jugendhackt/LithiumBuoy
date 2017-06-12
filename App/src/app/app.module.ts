@@ -15,6 +15,7 @@ import { NewAlarmPage } from '../pages/newAlarm/newAlarm';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
@@ -56,7 +57,8 @@ import { AlarmPipe } from '../classes/alarmPipe';
     BatteryStatus,
     BackgroundMode,
     AlarmService,
-    StateService
+    StateService,
+    LocalNotifications
   ]
 })
 export class AppModule {}
