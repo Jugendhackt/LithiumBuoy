@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { StateService } from '../../classes/StateService'
+import { StateService } from '../../classes/state.service'
 
 @Component({
   selector: 'page-contact',

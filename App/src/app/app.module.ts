@@ -20,7 +20,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { BatteryStatus } from '@ionic-native/battery-status';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { AlarmService } from '../classes/alarmService'
-import { StateService } from '../classes/StateService'
+import { StateService } from '../classes/state.service'
 import { AlarmPipe } from '../classes/alarmPipe';
 
 @NgModule({

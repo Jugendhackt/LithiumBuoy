@@ -7,7 +7,7 @@ import { BatteryStatusResponse } from '@ionic-native/battery-status';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
-import { StateService } from '../../classes/StateService'
+import { StateService } from '../../classes/state.service'
 import { LocalNotifications } from '@ionic-native/local-notifications'
 import { Platform } from 'ionic-angular';
 
