@@ -9,7 +9,9 @@ import { AlarmPipe } from '../../classes/alarmPipe';
 @Component({
   selector: 'page-alarm',
   templateUrl: 'alarm.html',
-  providers: [AlarmService]
+  providers: [
+      AlarmService
+  ]
 })
 export class AlarmPage {
   alarms = [
@@ -21,6 +23,7 @@ export class AlarmPage {
 
   alarmService;
   alertController;
+
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, private AlarmService: AlarmService, private alertCtrl: AlertController) {
     this.alertController=AlertController;
     this.alarmService=AlarmService;

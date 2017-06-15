@@ -11,8 +11,11 @@
   </ion-fab>
   <ion-card *ngFor="let alarm of alarms; let i = index" (press)="delete(i)">
     <ion-card-header>
-      {{ alarm.time }} {{ alarm.repeat | alarmPipe }}
+      {{ alarm.time }}
     </ion-card-header>
-    <ion-toggle [(ngModel)]="alarm.enabled" (ionChange)="changedAlarm()"></ion-toggle>
+    <ion-card-content>
+      {{ alarm.repeat | alarmPipe }}
+      <ion-toggle [(ngModel)]="alarm.enabled" (ionChange)="changedAlarm()"></ion-toggle>
+    </ion-card-content>
   </ion-card>
 </ion-content>

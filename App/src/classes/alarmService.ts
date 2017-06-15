@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Observable } from 'rxjs/Observable'
+import { AlarmModel } from "../model/AlarmModel";
 
 //Service to manage and save the alarms
 @Injectable()
 export class AlarmService {
 
-  alarms: any[];
+  alarms: Array<AlarmModel>;
   Storage;
   constructor (private storage: Storage){
     this.Storage=storage;
@@ -21,6 +23,13 @@ export class AlarmService {
     }
   */
   addAlarm(alarm): void{
+    console.log("Pushing...");
+    this.alarms.push(alarm);
+    this.Storage.set("alarms", this.alarms);
+    console.log("Pushed:",this.alarms);
+  }
+
+  addAlarmWithTypesafety(alarm: AlarmModel): void{
     console.log("Pushing...");
     this.alarms.push(alarm);
     this.Storage.set("alarms", this.alarms);
@@ -48,7 +57,13 @@ export class AlarmService {
 
   //Set the alarm to the given array (Schema at "addAlarm()")
   setAlarms(alarms): void{
-    this.alarms=alarms;
+    this.alarms = alarms;
+    this.Storage.set("alarms", alarms);
+  }
+
+  //Set the alarm to the given array (Schema at "addAlarm()")
+  setAlarmsWithTypesafety(alarms: Array<AlarmModel>): void{
+    this.alarms = alarms;
     this.Storage.set("alarms", alarms);
   }
 
@@ -64,7 +79,16 @@ export class AlarmService {
   }
 
   //Returns a promise to get the saved alarms
-  getAlarms(){
+  getAlarms() {
+    return this.Storage.get("alarms");
+  }
+
+  getAlarmsRx(): Observable<Array<AlarmModel>> {
+    return Observable.fromPromise(this.Storage.get("alarms"));
+  }
+
+  //Returns a promise to get the saved alarms
+  getAlarmsWithTypesafety(): Promise<Array<AlarmModel>> {
     return this.Storage.get("alarms");
   }
 }

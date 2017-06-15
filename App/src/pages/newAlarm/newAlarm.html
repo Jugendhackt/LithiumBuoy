@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-navbar>
     <ion-title>Neuer Wecker</ion-title>
@@ -9,11 +7,11 @@
 <ion-content #popoverContent padding class="popover-page">
   <ion-item>
     <ion-label>Zeit: </ion-label>
-    <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="event.time"></ion-datetime>
+    <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="viewModel.time"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>Wiederholen</ion-label>
-    <ion-select [(ngModel)]="event.repeat" multiple="true" cancelText="Abbrechen" okText="Ok!">
+    <ion-select [(ngModel)]="viewModel.repeat" multiple="true" cancelText="Abbrechen" okText="Ok">
       <ion-option value="Montag">Montag</ion-option>
       <ion-option value="Dienstag">Dienstag</ion-option>
       <ion-option value="Mittwoch">Mittwoch</ion-option>
