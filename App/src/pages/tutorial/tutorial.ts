@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuController, NavController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -16,10 +17,12 @@ export interface Slide {
   templateUrl: 'tutorial.html'
 })
 export class TutorialPage {
+
   slides: Slide[];
   showSkip = true;
+  storageComponent: Storage;
 
-  constructor(public navCtrl: NavController, public menu: MenuController) {
+  constructor(public navCtrl: NavController, public menu: MenuController, storageComponent: Storage) {
         this.slides = [
           {
             title: 'Wilkommen bei dieser tollen App',
@@ -37,13 +40,17 @@ export class TutorialPage {
             image: 'assets/img/ica-slidebox-img-3.png',
           }
         ];
+        this.storageComponent = storageComponent;
   }
 
-  startApp() {
+
+  // Ends tutorial and shows the app
+  public startApp() {
     this.navCtrl.setRoot(TabsPage, {}, {
       animate: true,
       direction: 'forward'
     });
+    this.storageComponent.set("tutorialShown", true);
   }
 
   onSlideChangeStart(slider) {
