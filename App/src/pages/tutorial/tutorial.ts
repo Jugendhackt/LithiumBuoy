@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import { MenuController, NavController } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
-import { Storage } from '@ionic/storage';
-
-
+import {Component, ViewChild} from "@angular/core";
+import {MenuController, NavController, Slides} from "ionic-angular";
+import {TabsPage} from "../tabs/tabs";
+import {Storage} from "@ionic/storage";
 
 
 export interface Slide {
@@ -18,14 +16,16 @@ export interface Slide {
 })
 export class TutorialPage {
 
-  slides: Slide[];
-  showSkip = true;
-  storageComponent: Storage;
+    @ViewChild(Slides) slidesView: Slides;
+
+    slides: Slide[];
+    showSkip = true;
+    storageComponent: Storage;
 
   constructor(public navCtrl: NavController, public menu: MenuController, storageComponent: Storage) {
         this.slides = [
           {
-            title: 'Wilkommen bei dieser tollen App',
+              title: 'Wilkommen bei LithiumBuoy',
             description: 'Dein Akku schonen blah blah',
             image: 'assets/img/ica-slidebox-img-1.png',
           },
@@ -41,11 +41,15 @@ export class TutorialPage {
           }
         ];
         this.storageComponent = storageComponent;
+
   }
 
+    nextSlide() {
+        this.slidesView.slideNext();
+    }
 
   // Ends tutorial and shows the app
-  public startApp() {
+    startApp() {
     this.navCtrl.setRoot(TabsPage, {}, {
       animate: true,
       direction: 'forward'
